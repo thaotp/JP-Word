@@ -1,0 +1,42 @@
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   username: root
+#   password: root
+
+# development:
+#   <<: *default
+#   database: word_resources
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   # For details on connection pooling, see rails configuration guide
+#   # http://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: 5
+#   database: vocal_production
+#   # password: <%= ENV['VOCAL_DATABASE_PASSWORD'] %>
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: THAO-NUS
+  password: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: jl_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: qvocab_test
+
+production:
+  <<: *default
+  database: jl_production
